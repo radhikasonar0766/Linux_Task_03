@@ -1,0 +1,50 @@
+Part A: Process Monitoring
+1. What is a Process?
+A process is a program that is currently running on the system. Each process uses system resources such as CPU and memory.
+
+2. What is a PID?
+PID (Process ID) is a unique number assigned to each running process in Linux.
+
+3. Which process is consuming the most CPU?
+The process shown at the top of the %CPU column in top or htop is consuming the most CPU.
+
+4. Which process is consuming the most Memory?
+The process shown at the top of the %MEM column in top or htop is consuming the most memory.
+
+Part D: Service Monitoring
+1. What is a Service?
+A service is a background program that performs specific tasks and runs continuously without user interaction.
+
+2. Why are services important?
+Services provide essential functions such as networking, SSH access, logging, and system management.
+
+3. How can a stopped service affect a system?
+If a service stops, the functionality it provides becomes unavailable. For example, if the SSH service stops, remote login will not work.
+
+
+Part F: Security Monitoring Challenge
+Command	 Purpose	                         Example Output	                  Security Use Case
+netstat	 Displays network connections and ports	 tcp 0 0 0.0.0.0:22 LISTEN	  Detect open ports and suspicious connections
+ss	 Shows socket and network statistics	 LISTEN 0 128 *:22	          Monitor active network sessions
+who	 Shows logged-in users	                 student pts/0 	                  Identify currently logged-in users
+w	 Shows user activity and system load	 USER TTY FROM LOGIN@	          user sessions and activities
+last	 Displays login history	                 student pts/0	                  Investigate past login attempts
+
+
+Part G: Mini SOC Activity
+1. How would you identify resource-heavy processes?
+I would use top, htop, or ps aux to check which processes are using the highest CPU and memory resources.
+
+2. How would you determine whether a process is suspicious?
+I would check the process name, PID, owner, resource usage, file location, and whether it is expected to run on the system.
+
+3. What information would you collect before terminating a process?
+Before terminating a process, I would collect:
+Process Name
+PID
+User/Owner
+CPU Usage
+Memory Usage
+Process Path
+Related Network Connections
+This information helps determine whether the process is legitimate or malicious and prevents accidental disruption of important services.
